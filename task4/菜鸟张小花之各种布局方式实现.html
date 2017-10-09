@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://ife.baidu.com/note/detail/id/666 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="keywords" content="百度, 百度前端, 百度前端学院, 百度前端技术学院, 前端, 前端开发, web前端, 前端开发工程师, CSS, JavaScript, HTML, Web标准"><meta name="description" content="百度前端技术学院是面向大学生的前端技术学习平台，由百度创办的免费前端技术学习实践、交流、分享平台"><link rel="shortcut icon" href="http://ife.baidu.com/2017/asset/common/img/favicon_24c70cf.ico" type="image/x-icon"><link rel="icon" href="http://ife.baidu.com/2017/asset/common/img/favicon_24c70cf.ico" type="image/x-icon"><link rel="bookmark" href="http://ife.baidu.com/2017/asset/common/img/favicon_24c70cf.ico" type="image/x-icon">
+
+
+
+
+
+<title>菜鸟张小花之各种布局方式实现</title>
+<link href="./菜鸟张小花之各种布局方式实现_files/noteDetail_1bb1e40.css" rel="stylesheet">
+<script src="./菜鸟张小花之各种布局方式实现_files/hm.js.download"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?d422e3cabaaaa7445e54622b97472bab";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+
+</head><body style=""><div id="viewport"><header><nav class="navbar navbar-default nav-wrapper" role="navigation"><div class="container-fluid"><div class="navbar-header"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand ife-pic" href="http://ife.baidu.com/"><img alt="Brand" src="./菜鸟张小花之各种布局方式实现_files/logo_a3b4064.png"></a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav nav-center"><li class="nav-menu "><a class="menu-path" href="http://ife.baidu.com/">首页</a></li><li class="nav-menu "><a class="menu-path" href="http://ife.baidu.com/course/all">所有课程</a></li><li class="nav-menu "><a class="menu-path" href="http://ife.baidu.com/note/list?isElite=1">精选笔记</a></li><li class="nav-menu "><a class="menu-path" href="http://ife.baidu.com/user/rank">学霸榜单</a></li><li class="nav-menu"><a class="menu-tieba" target="_blank" href="http://tieba.baidu.com/f?kw=%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF%E5%AD%A6%E9%99%A2&amp;ie=utf-8">学院贴吧</a></li><li class="nav-special begin"><a href="https://openapi.baidu.com/oauth/2.0/authorize?client_id=89XtMi6980UVMb5iMiRAL27g&amp;response_type=code&amp;redirect_uri=http%3A%2F%2Fife.baidu.com%2Fuser%2Fsignin&amp;scope=&amp;state=76e6109d7f6a53b9e2b7480d441d7668&amp;display=page" class="nav-btn">登录</a></li></ul></div></div></nav>
+</header><p style="display:none">百度前端技术学院是一个为大学生创办的免费的前端技术实践、分享、交流平台。由百度校园招聘组、百度校园品牌部、百度前端技术部以及多个百度的前端团队联合创办。学院组织了一批百度在职工程师，精心编写了数十个实践编码任务，将技术知识点系统有机地串联在各个充满趣味与挑战的任务中，同学们通过实际地编码练习来掌握知识，再辅以互相评价、学习笔记等方式，加深对于学习内容的理解。在过去的三年中，百度前端技术学院累积吸引了上万名同学参加，并且有数十名同学在学习后，顺利加入了百度，成为了百度的前端工程师。</p>
+<main class="note-detail-main"><div class="note-title"><h2>菜鸟张小花之各种布局方式实现</h2></div><div class="card note-detail-wrap"><div class="note-basic-info row"><span class="info-item note-owner col-xs-12 col-md-6">作者<a class="value" href="http://ife.baidu.com/user/profile/id/1404">许小兰</a><span class="separator"></span>课程<a href="http://ife.baidu.com/course/detail/id/96">任务五：零基础HTML及CSS编码（二）</a></span><span class="info-item col-xs-12 col-sm-6 col-md-3"><i class="icon-view"></i><em>1810</em>次浏览<i class="icon-thumbs-up"></i><em>57</em>赞</span><span class="info-item publish-date col-xs-12 col-sm-6 col-md-3">2017-03-02 19:33</span></div><div class="note-content md-content-wrap"><h3 id="-">写在前面</h3>
+<ul><li>由于知识有限，有的内容可能有点小错误什么的，仅供参考参考，欢迎大佬们指正，小花在这里谢过~</li>
+<li>小贴士（to freshman）：给每个块都加上颜色，更好辨识。</li>
+<li>关于代码：这里给出的都是css部分，html部分用最常规的结构就好啦</li>
+</ul><h3 id="1-">1. 水平居中</h3>
+<ul><li>方法一：margin:0 auto; （最常用的居中布局方式）</li>
+<li>方法二：text-align和inline-block的结合（设置父元素的text-align为center）。
+<p>这种方式最好应用于图片、按钮、文字之类的居中模式，否则就需要借助inline-block来进行居中布局。</p>
+
+</li>
+<li>方法三：position绝对定位来实现居中布局。
+<p> 适用于块级元素不给出宽高的情况下(需要借助transtrom的tanslateX方法)。</p>
+
+</li>
+</ul><pre><code><span class="hljs-selector-id">#parent</span>{
+    <span class="hljs-attribute">position</span>: relative;
+}
+<span class="hljs-selector-id">#child</span>{
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-50%);
+}
+</code></pre><ul><li>方法四：利用flex弹性布局的一个属性。
+<p>子元素宽度已知的情况下</p>
+
+</li>
+</ul><pre><code><span class="hljs-selector-id">#parent</span>{
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">justify-content</span>: center;
+}
+</code></pre><ul><li>其他还有很多方法，一般用的不太多。并且各种方法优缺点不一样，可选择性使用。</li>
+</ul><h3 id="2-">2. 水平居中及垂直居中</h3>
+<ul><li>方法一：先说一种神奇的方式吧，
+<ol><li>子元素 div 绝对定位 </li>
+<li>父元素需要被定位 </li>
+<li>子元素 top、bottom、left、right 四个位置值均为 0 </li>
+<li>子元素 margin: auto; </li>
+</ol></li>
+</ul><p>下面代码是可以实现的，但还有点问题，大家帮小花看看~</p>
+<pre><code><span class="hljs-selector-id">#parent</span>{
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">position</span>: fixed;
+}
+<span class="hljs-selector-id">#child</span>{
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">margin</span>: auto;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+}
+</code></pre><ul><li>方式二：利用position的绝对定位及负边框来实现。</li>
+</ul><pre><code> <span class="hljs-selector-id">#parent</span>{
+    <span class="hljs-attribute">position</span>: fixed;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}
+<span class="hljs-selector-id">#child</span>{
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">margin-top</span>: -<span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+}
+</code></pre>
+<p>对于未给出宽高的元素，又需要请transform登场了，同时需要做好各浏览器的兼容。对于我这种懒癌患者，就不给出兼容代码嘞~</p>
+
+<ul><li>其他应该还有一些方法，暂时还没想到，等写出来了再补补（哦对了，忘了说flex了，算了还是不写了）</li>
+</ul><h3 id="3-">3. 左边固定右边自适应的两列布局</h3>
+<p>我猜吧，大家对这种布局方式最熟悉不过了，平时用的也会比较多，所以呢，你们写的应该都会比我的好~</p>
+<ul><li>方式一：float+margin的方式
+<p>这种方式一定要记得给父元素清除浮动啊，不然就尴尬了呢，这里插播一种全局性(这个词似乎不太对)的清除浮动的伪元素方法.</p>
+
+</li>
+</ul><pre><code><span class="hljs-selector-class">.clearfix</span>:after {
+    <span class="hljs-attribute">content</span>: <span class="hljs-string">'.'</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">overflow</span>: hidden;
+    <span class="hljs-attribute">clear</span>: both;
+    <span class="hljs-attribute">display</span>: block;
+    <span class="hljs-attribute">visibility</span>: hidden;
+}
+<span class="hljs-selector-class">.clearfix</span> {
+    zoom: <span class="hljs-number">1</span>;  &lt;!--hack--&gt;
+}
+</code></pre><p>看起来有点小复杂啊，这里不分析这种方法的原理，记住就好了。当然你也可以直接借助触发BFC的方式来解决（偷偷告诉你，常用的方式就是给你的父元素设置<code>overflow: hidden;</code>啦）。</p>
+<p>哦+语气~好像跑偏了，说好的布局呢，见下诉代码：</p>
+<pre><code><span class="hljs-selector-id">#left</span>{
+    <span class="hljs-attribute">float</span>: left;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+}
+<span class="hljs-selector-id">#right</span>{
+    <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">120px</span>;
+}
+</code></pre><ul><li>方式二：float+overflow的方式</li>
+</ul><p>这就是传说中利用BFC的规则来实现两列布局啊啊啊！</p>
+
+<p>此处做个修改，原来写的有点问题（发现这种方式父元素的高度是取决于最大子元素的高度，在左边栏高度大于右边栏的情况下不会出现问题，但是反过来就塌陷了，所以还是需要给父元素清除浮动）</p>
+
+<pre><code>#left{
+    float: left;
+    width: 100px;
+    margin-right: 20px; <span class="hljs-comment">&lt;!--好歹留个空啊嘿嘿--&gt;</span>
+}
+#right{
+    overflow: hidden;
+}
+</code></pre><ul><li>方式三：float+margin+position的方式</li>
+</ul><p>这个方式呢也用到过，但是要考虑的比较多一点，不过其实也还好。<br>接下来请看实现代码：</p>
+<pre><code><span class="hljs-selector-id">#parent</span>{
+    <span class="hljs-attribute">position</span>: relative;
+}
+<span class="hljs-selector-id">#left</span>{
+    <span class="hljs-attribute">float</span>: left;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#ccc</span>;
+}
+<span class="hljs-selector-id">#right</span>{
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">120px</span>;
+    <span class="hljs-attribute">background-color</span>:pink; 
+}
+</code></pre>
+<p>这种方式实现起来很简单，但是对后文是有影响的，需要自己解决一下，懒小花就不写啦~</p>
+
+<ul><li>方式四：flex方式
+<p>这个呢，坑肯定是比较多的，建议用在小范围的布局，当然某些时候用起来确实比较爽歪歪啦</p>
+
+</li>
+</ul><pre><code><span class="hljs-selector-id">#parent</span>{
+    <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-id">#left</span>{
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">20px</span>;
+}
+<span class="hljs-selector-id">#right</span>{
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+}
+</code></pre><ul><li>其他的吧，我暂时还没用到也没写到~网上一搜会有好多好多精讲的。</li>
+</ul><h3 id="4-">4. 左边自适应右边固定</h3>
+<p>话说其实我就只写了一种方法，我都有点不好意思放上来了，不管了，小花的脸皮比较厚，不怕！</p>
+<ul><li>方式一： 当然还是position<br>反正很多情况都可以用position来解决，但是，同时也会有一些其他问题出现，所以，自行思考用不用~</li>
+</ul><pre><code><span class="hljs-selector-id">#parent</span> {
+    <span class="hljs-attribute">position</span>: relative;
+}
+<span class="hljs-selector-id">#left</span> {
+    <span class="hljs-attribute">margin-right</span>:<span class="hljs-number">220px</span>; 
+}
+<span class="hljs-selector-id">#right</span> {
+    <span class="hljs-attribute">position</span>: absolute; 
+    <span class="hljs-attribute">right</span>:<span class="hljs-number">0</span>; 
+    <span class="hljs-attribute">top</span>:<span class="hljs-number">0</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+}
+</code></pre><h3 id="5-">5. 两边固定中间自适应的三列布局</h3>
+<p>其实这个布局用的也挺多的啊哈，嗯，昨天写的作业就是这个！</p>
+<ul><li>方式一：纯float方式</li>
+</ul><p>注意：</p>
+<ol><li>左侧元素与右侧元素优先渲染，分别向左和向右浮动 </li>
+<li>中间元素在文档流的最后渲染，自动插入到左右两列元素的中间，随后设置 margin 左右边距分别为左右两列的宽度，将中间元素调整到正确的位置。</li>
+</ol><pre><code><span class="hljs-selector-class">.left</span>{
+    <span class="hljs-attribute">float</span>: left;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+}
+<span class="hljs-selector-class">.right</span>{
+    <span class="hljs-attribute">float</span>: right;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+}
+<span class="hljs-selector-class">.middle</span>{
+    <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> <span class="hljs-number">120px</span> <span class="hljs-number">0</span> <span class="hljs-number">220px</span>;
+}
+</code></pre>
+<p>但凡用float的时候都要想一下父元素上清除浮动这个问题！</p>
+
+<ul><li>方式二：position的绝对定位</li>
+</ul><p>其实感觉跟float的原理差不多，都是将左右两侧的块先固定好，再对中间部分进行处理，只不过自己可以在不同情况下选择float或者position。（补充：这种方式的父元素高度取决于中间部分的高度，当两侧高度大于中间高度时，则出现高度塌陷，除非指定父元素的高度，当两侧高度小于中间部分时，可以使用。所以要考虑使用场景慎重选择不同的方式~）</p>
+<pre><code><span class="hljs-selector-class">.parent</span>{
+    <span class="hljs-attribute">position</span>: relative;
+}
+<span class="hljs-selector-class">.left</span>{
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;
+}
+<span class="hljs-selector-class">.right</span>{
+    <span class="hljs-attribute">position</span>: absolute;
+    <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+}
+<span class="hljs-selector-class">.middle</span>{
+    <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> <span class="hljs-number">120px</span> <span class="hljs-number">0</span> <span class="hljs-number">220px</span>;
+}
+</code></pre><ul><li>方式三：flex的弹性布局</li>
+</ul><p>不得不说的是其实很多布局都可以用flex来实现(简单粗暴嘿嘿)，但是flex的兼容性不是很好，并且还有别问题，所以保险起见还是选择常用的，这里简单介绍下。</p>
+<pre><code><span class="hljs-selector-class">.parent</span>{
+    <span class="hljs-attribute">display</span>: flex;
+}
+<span class="hljs-selector-class">.left</span>{
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+}
+<span class="hljs-selector-class">.right</span>{
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+}
+<span class="hljs-selector-class">.middle</span>{
+    <span class="hljs-attribute">flex</span>: <span class="hljs-number">1</span>;
+    <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> <span class="hljs-number">20px</span>; 
+}
+</code></pre><ul><li>方式四：最后该淘宝的<code>双翼布局</code>闪亮登场了</li>
+</ul><p>要注意的是这种布局方式需要将主栏优先渲染，然后再加上两边的翅膀，即双翼，不过话又说话来，虽然小花是按照这个套路写的，但也不确定自己写的就是双翼布局。<br>为了不误人子弟，在这先说明只是参考参考哟（欢迎大佬纠正）~</p>
+
+<ul><li>第一步，先将主栏左浮动，并设宽度为100%，即铺满父元素</li>
+<li>第二步，将左栏左浮动，并设左外边距为-100%</li>
+<li>第三步，将右栏左浮动，并设左外边距为负的自身宽度</li>
+<li>第四步，设置主栏，嘿嘿，这时候不管你使用什么方法都达不到效果，解决办法就是给主栏的内容加一个包裹层，并设左右外边距为左右两侧的宽度。</li>
+<li>第五步，好了，完美！（但是别忘了，要清除浮动哦~）</li>
+</ul><h3 id="6-">6. 是时候小结一波了</h3>
+<ul><li>首先，每种方式都小试了一下，基本上效果是可以达到的，当然实际情况中会比较复杂，你会遇到各种各样的麻烦，祝你好运~</li>
+<li>每种方式的优缺点其实对于我这种萌新来说也是比较懵，只是这几天写了几个作业才想到要小小总结下的</li>
+<li>第一次用markdown写文字棒棒哒，不要介意某些地方可能写错了</li>
+</ul><h3 id="-">大发！</h3>
+</div><div class="note-op"></div><div class="note-comment-wrap"><div class="comment-title"><em class="comment-count">18</em>条评论</div><div class="comment-form"><textarea class="form-control comment-box" placeholder="在这里写下你的评论..."></textarea><div class="comment-btns" style="display: none"><button type="button" data-cancel="1" class="comment-btn btn btn-link ife-link-btn">取消</button><button type="button" data-loading-text="提交中..." class="comment-btn btn note-op-btn">评论</button></div></div><ul class="comment-list"><li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/12562" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/2078617a333736383538303032132c"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/12562">徐文俊</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-02 21:21</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">挺齐全的，常见的布局方法都有了，赞</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/14165" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/f251e5bf83e4b88de8a781e58db3e4b8bae8bf9ce696b9024b"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/14165">舒昭维</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-02 21:32</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">thx，赞</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/4672" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/04f24149e8b4bee68896e79c9f6420"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/4672">董宇涵</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-02 21:49</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">赞一个，学到很多</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/9461" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/4af8e594af57534c4859"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/9461">吴赛玲</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-02 22:02</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">赞一个</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/14509" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/de3135363730353631de0d"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/14509">刘旭阳</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-02 22:55</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">赞！很棒很棒！</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/8931" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/0220b49d"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/8931">赵恒远</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-05 11:37</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">能透漏下怎么用markdown来加入代码块吗?</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/5960" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/6416e58ab3e9bb91e782ad4b18"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/5960">劳厚宾</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-05 18:33</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">百度前端学院demo演示站开发完成。<br><br>兼容部分手机端和PC端，访问：http://ife.giscafer.com/</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/11364" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/4816e99383e8afad353231b921"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/11364">焦慧君</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-07 10:39</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">太棒了，总结了很多啦~</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/15409" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/0d35e7ac99e4b8a8e6ad8c1040"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/15409">赵琛</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-07 20:06</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">我爱学习 学习使我快乐</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/15973" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/7575677962706f69b080"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/15973">龚意邦</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-08 20:48</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">赞一个，顺便说一下垂直居中还可以加上这个"transform: translateY(-50%);"。</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/13272" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/35a3ae92"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/13272">张玉麒</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-21 10:32</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">真棒啊大神求加qq172404460</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/5562" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/da716c78636875616e31324a33"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/5562">罗小川</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-21 22:03</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">顺便说一下：<br>父容器和子容器都宽高都不固定的水平垂直居中布局<br>inline-block+text-align+table-cell+vertical-align<br>.parent{<br>text-align:center;<br>display:table-cell;<br>vertical-align:middle;<br>}<br>.child{<br>display:inline-block;<br>}<br>优点：兼容性比较好，可以兼容到IE8，如果要兼容到IE6,7，改成表结构。IE6,7,不支持display：inline-block;可以换成：display：inline;zoom:1;<br>flex<br>.parent{<br>    display: flex;<br>    justify-content: center;<br>   align-items:center;<br>}<br>水平垂直居中。<br>优点：只需要设置父级，子元素宽高不定<br>缺点：兼容性问题</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/7642" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/5077e582b2e5a887436174686572696e65d13a"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/7642">林曜</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-22 00:44</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">三栏布局的absolute法应该是不满足题目要求的，absolute定位的元素脱离文档流会产生高度塌陷的问题</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/19243" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/62995f5fe5bda9e7bb98e6b8a9e69f94e5beaee986baa135"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/19243">杨苏蕊</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-22 13:13</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">赞一个</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/8921" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/2848e994a4e5ad90e695b2e7bd90e5a4b4ed2f"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/8921">赵丽</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-27 18:55</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">首先感谢楼主分享，但是有个疑问，实现两栏式布局的第二种方法如果不对父元素清除浮动是不是会出现两栏的上边距不等的情况呢？</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/1404" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/f03c56737567617237377566"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/1404">许小兰</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-28 09:18</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">@赵丽 感谢提出疑问，刚刚试了一下，发现这种方式父元素的高度是取决于最大子元素的高度，在左边栏高度大于右边栏的情况下不会出现问题，但是反过来就塌陷了，所以还是需要给父元素清除浮动，再次感谢~</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/1404" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/f03c56737567617237377566"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/1404">许小兰</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-03-28 09:57</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">@林曜 感谢提出疑问，文中已做修改。（需要考虑场景使用）</p>
+            </li>
+
+            <li class="comment-item">
+                <div class="reply-user">
+                    <a href="http://ife.baidu.com/user/profile/id/11494" class="img-wrap"><img src="./菜鸟张小花之各种布局方式实现_files/04d4e7baa6e4bfaee4ba9a31313132915a"></a>
+                    <div class="reply-basic"><a href="http://ife.baidu.com/user/profile/id/11494">曹瀚文</a>
+                        <div class="reply-time-info">
+                             <span class="reply-time">2017-04-09 20:30</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="reply-content">5. 两边固定中间自适应的三列布局   中的.middle 加个overflow：hidden 会更好些~</p>
+            </li></ul><div class="view-more-btn"><div class="load-more-wrap load-none-more">
+        <div class="loading-tip"><i class="icon-loading"></i>加载中...</div>
+        <p class="load-none-tip">没有更多了！</p>
+        <span class="load-more-btn">点击加载更多</span>
+    </div></div></div></div></main>
+<footer><div class="footer"><div class="footer-wrapper"><p class="first"><span class="contact">IFE微信公众号：</span><span class="footer-content footer-mg">baidu_ife</span><span class="contact">IFE微博：<a target="_blank" class="footer-content" href="http://weibo.com/u/5568860641?topnav=1&amp;wvr=6&amp;topsug=1">Baidu前端技术学院</a></span></p><p class="friend-link"><span class="note footer-text">友情链接:</span><a class="footer-mg" target="_blank" title="百度EFE前端团队" href="http://efe.baidu.com/">百度EFE</a><a class="footer-mg" target="_blank" href="http://campus.baidu.com/">百度校园</a><a class="footer-mg" target="_blank" href="http://talent.baidu.com/external/baidu/campus.html">百度校园招聘</a><a class="footer-mg" target="_blank" href="http://bit.baidu.com/?fr=ife/">百度技术学院</a></p><p class="learn-source"><span class="source footer-text">资源:</span><a class="footer-mg" target="_blank" href="https://github.com/baidu-ife">IFE 2015</a><a class="footer-mg" href="http://ife.baidu.com/2016/static/index.html" target="_blank">IFE 2016</a></p><p class="copyright"><span class="copyright-text"><span>©2017&nbsp;Baidu&nbsp;</span><a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;<a href="http://jianyi.baidu.com/" target="_blank">意见反馈</a>&nbsp;<span>京ICP证030173号&nbsp;</span></span></p></div></div>
+</footer></div><a id="go-top" style="display: none;"><i class="icon-arrow-up"></i></a><script src="./菜鸟张小花之各种布局方式实现_files/esl.js.download"></script><script>require.config({"baseUrl": "//ife.baidu.com/2017/asset","paths": {"babelHelpers": "babelHelpers"},"packages": [{"name": "vue","location": "../dep/vue","main": "dist/vue.runtime.common"},{"name": "vue-router","location": "../dep/vue-router","main": "dist/vue-router.common"},{"name": "etpl","location": "../dep/etpl/asset","main": "main"},{"name": "saber-emitter","location": "../dep/saber-emitter/asset","main": "emitter"},{"name": "bootstrapValidator","location": "../dep/bootstrapValidator","main": "dist/js/bootstrapValidator"},{"name": "bootstrap-slider","location": "../dep/bootstrap-slider","main": "dist/bootstrap-slider"},{"name": "slick-carousel","location": "../dep/slick-carousel","main": "slick/slick"},{"name": "element-ui","location": "../dep/element-ui","main": "lib/index"},{"name": "simplemde","location": "../dep/simplemde/asset","main": "js/simplemde"},{"name": "codemirror","location": "../dep/codemirror","main": "lib/codemirror"},{"name": "codemirror-spell-checker","location": "../dep/codemirror-spell-checker/asset","main": "js/spell-checker"},{"name": "typo-js","location": "../dep/typo-js","main": "typo"},{"name": "marked","location": "../dep/marked","main": "lib/marked"},{"name": "highlight.js","location": "../dep/highlight.js","main": "lib/index"},{"name": "jquery-editable-select","location": "../dep/jquery-editable-select","main": "dist/jquery-editable-select.min"},{"name": "bootstrap","location": "../dep/bootstrap/js","main": "./dist/js/npm"},{"name": "bce-bos-uploader","location": "../dep/bce-bos-uploader","main": "bce-bos-uploader.bundle.min"},{"name": "echarts","location": "../dep/echarts/lib","main": "echarts"},{"name": "zrender","location": "../dep/zrender","main": "lib/zrender"}],"shim": {"jquery": {"exports": "$"}},"waitSeconds": 5});</script><script src="./菜鸟张小花之各种布局方式实现_files/jquery-1.10.2_d88366fd.js.download"></script>
+<script src="./菜鸟张小花之各种布局方式实现_files/noteDetail_01b4b6d.js.download"></script>
+<script src="./菜鸟张小花之各种布局方式实现_files/note_detaile4b36050_vendor_550899b.js.download"></script>
+<script>
+    require(['note/noteDetail'], function (app) {
+        app.init([], {"content":"<h3 id=\"-\">\u5199\u5728\u524d\u9762<\/h3>\n<ul><li>\u7531\u4e8e\u77e5\u8bc6\u6709\u9650\uff0c\u6709\u7684\u5185\u5bb9\u53ef\u80fd\u6709\u70b9\u5c0f\u9519\u8bef\u4ec0\u4e48\u7684\uff0c\u4ec5\u4f9b\u53c2\u8003\u53c2\u8003\uff0c\u6b22\u8fce\u5927\u4f6c\u4eec\u6307\u6b63\uff0c\u5c0f\u82b1\u5728\u8fd9\u91cc\u8c22\u8fc7~<\/li>\n<li>\u5c0f\u8d34\u58eb\uff08to freshman\uff09\uff1a\u7ed9\u6bcf\u4e2a\u5757\u90fd\u52a0\u4e0a\u989c\u8272\uff0c\u66f4\u597d\u8fa8\u8bc6\u3002<\/li>\n<li>\u5173\u4e8e\u4ee3\u7801\uff1a\u8fd9\u91cc\u7ed9\u51fa\u7684\u90fd\u662fcss\u90e8\u5206\uff0chtml\u90e8\u5206\u7528\u6700\u5e38\u89c4\u7684\u7ed3\u6784\u5c31\u597d\u5566<\/li>\n<\/ul><h3 id=\"1-\">1. \u6c34\u5e73\u5c45\u4e2d<\/h3>\n<ul><li>\u65b9\u6cd5\u4e00\uff1amargin:0 auto; \uff08\u6700\u5e38\u7528\u7684\u5c45\u4e2d\u5e03\u5c40\u65b9\u5f0f\uff09<\/li>\n<li>\u65b9\u6cd5\u4e8c\uff1atext-align\u548cinline-block\u7684\u7ed3\u5408\uff08\u8bbe\u7f6e\u7236\u5143\u7d20\u7684text-align\u4e3acenter\uff09\u3002\n<p>\u8fd9\u79cd\u65b9\u5f0f\u6700\u597d\u5e94\u7528\u4e8e\u56fe\u7247\u3001\u6309\u94ae\u3001\u6587\u5b57\u4e4b\u7c7b\u7684\u5c45\u4e2d\u6a21\u5f0f\uff0c\u5426\u5219\u5c31\u9700\u8981\u501f\u52a9inline-block\u6765\u8fdb\u884c\u5c45\u4e2d\u5e03\u5c40\u3002<\/p>\n\n<\/li>\n<li>\u65b9\u6cd5\u4e09\uff1aposition\u7edd\u5bf9\u5b9a\u4f4d\u6765\u5b9e\u73b0\u5c45\u4e2d\u5e03\u5c40\u3002\n<p> \u9002\u7528\u4e8e\u5757\u7ea7\u5143\u7d20\u4e0d\u7ed9\u51fa\u5bbd\u9ad8\u7684\u60c5\u51b5\u4e0b(\u9700\u8981\u501f\u52a9transtrom\u7684tanslateX\u65b9\u6cd5)\u3002<\/p>\n\n<\/li>\n<\/ul><pre><code><span class=\"hljs-selector-id\">#parent<\/span>{\n    <span class=\"hljs-attribute\">position<\/span>: relative;\n}\n<span class=\"hljs-selector-id\">#child<\/span>{\n    <span class=\"hljs-attribute\">position<\/span>: absolute;\n    <span class=\"hljs-attribute\">top<\/span>: <span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">left<\/span>: <span class=\"hljs-number\">50%<\/span>;\n    <span class=\"hljs-attribute\">transform<\/span>: <span class=\"hljs-built_in\">translateX<\/span>(-50%);\n}\n<\/code><\/pre><ul><li>\u65b9\u6cd5\u56db\uff1a\u5229\u7528flex\u5f39\u6027\u5e03\u5c40\u7684\u4e00\u4e2a\u5c5e\u6027\u3002\n<p>\u5b50\u5143\u7d20\u5bbd\u5ea6\u5df2\u77e5\u7684\u60c5\u51b5\u4e0b<\/p>\n\n<\/li>\n<\/ul><pre><code><span class=\"hljs-selector-id\">#parent<\/span>{\n    <span class=\"hljs-attribute\">display<\/span>: flex;\n    <span class=\"hljs-attribute\">justify-content<\/span>: center;\n}\n<\/code><\/pre><ul><li>\u5176\u4ed6\u8fd8\u6709\u5f88\u591a\u65b9\u6cd5\uff0c\u4e00\u822c\u7528\u7684\u4e0d\u592a\u591a\u3002\u5e76\u4e14\u5404\u79cd\u65b9\u6cd5\u4f18\u7f3a\u70b9\u4e0d\u4e00\u6837\uff0c\u53ef\u9009\u62e9\u6027\u4f7f\u7528\u3002<\/li>\n<\/ul><h3 id=\"2-\">2. \u6c34\u5e73\u5c45\u4e2d\u53ca\u5782\u76f4\u5c45\u4e2d<\/h3>\n<ul><li>\u65b9\u6cd5\u4e00\uff1a\u5148\u8bf4\u4e00\u79cd\u795e\u5947\u7684\u65b9\u5f0f\u5427\uff0c\n<ol><li>\u5b50\u5143\u7d20 div \u7edd\u5bf9\u5b9a\u4f4d <\/li>\n<li>\u7236\u5143\u7d20\u9700\u8981\u88ab\u5b9a\u4f4d <\/li>\n<li>\u5b50\u5143\u7d20 top\u3001bottom\u3001left\u3001right \u56db\u4e2a\u4f4d\u7f6e\u503c\u5747\u4e3a 0 <\/li>\n<li>\u5b50\u5143\u7d20 margin: auto; <\/li>\n<\/ol><\/li>\n<\/ul><p>\u4e0b\u9762\u4ee3\u7801\u662f\u53ef\u4ee5\u5b9e\u73b0\u7684\uff0c\u4f46\u8fd8\u6709\u70b9\u95ee\u9898\uff0c\u5927\u5bb6\u5e2e\u5c0f\u82b1\u770b\u770b~<\/p>\n<pre><code><span class=\"hljs-selector-id\">#parent<\/span>{\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">100%<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>:<span class=\"hljs-number\">100%<\/span>;\n    <span class=\"hljs-attribute\">position<\/span>: fixed;\n}\n<span class=\"hljs-selector-id\">#child<\/span>{\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">400px<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>: <span class=\"hljs-number\">200px<\/span>;\n    <span class=\"hljs-attribute\">position<\/span>: absolute;\n    <span class=\"hljs-attribute\">top<\/span>: <span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">bottom<\/span>: <span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">left<\/span>: <span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">right<\/span>: <span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">margin<\/span>: auto;\n    <span class=\"hljs-attribute\">background-color<\/span>: <span class=\"hljs-number\">#ccc<\/span>;\n}\n<\/code><\/pre><ul><li>\u65b9\u5f0f\u4e8c\uff1a\u5229\u7528position\u7684\u7edd\u5bf9\u5b9a\u4f4d\u53ca\u8d1f\u8fb9\u6846\u6765\u5b9e\u73b0\u3002<\/li>\n<\/ul><pre><code> <span class=\"hljs-selector-id\">#parent<\/span>{\n    <span class=\"hljs-attribute\">position<\/span>: fixed;\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">100%<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>: <span class=\"hljs-number\">100%<\/span>;\n}\n<span class=\"hljs-selector-id\">#child<\/span>{\n    <span class=\"hljs-attribute\">position<\/span>: absolute;\n    <span class=\"hljs-attribute\">left<\/span>: <span class=\"hljs-number\">50%<\/span>;\n    <span class=\"hljs-attribute\">top<\/span>: <span class=\"hljs-number\">50%<\/span>;\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">400px<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>: <span class=\"hljs-number\">200px<\/span>;\n    <span class=\"hljs-attribute\">margin-top<\/span>: -<span class=\"hljs-number\">100px<\/span>;\n    <span class=\"hljs-attribute\">margin-left<\/span>: -<span class=\"hljs-number\">200px<\/span>;\n    <span class=\"hljs-attribute\">background-color<\/span>: <span class=\"hljs-number\">#ccc<\/span>;\n}\n<\/code><\/pre>\n<p>\u5bf9\u4e8e\u672a\u7ed9\u51fa\u5bbd\u9ad8\u7684\u5143\u7d20\uff0c\u53c8\u9700\u8981\u8bf7transform\u767b\u573a\u4e86\uff0c\u540c\u65f6\u9700\u8981\u505a\u597d\u5404\u6d4f\u89c8\u5668\u7684\u517c\u5bb9\u3002\u5bf9\u4e8e\u6211\u8fd9\u79cd\u61d2\u764c\u60a3\u8005\uff0c\u5c31\u4e0d\u7ed9\u51fa\u517c\u5bb9\u4ee3\u7801\u561e~<\/p>\n\n<ul><li>\u5176\u4ed6\u5e94\u8be5\u8fd8\u6709\u4e00\u4e9b\u65b9\u6cd5\uff0c\u6682\u65f6\u8fd8\u6ca1\u60f3\u5230\uff0c\u7b49\u5199\u51fa\u6765\u4e86\u518d\u8865\u8865\uff08\u54e6\u5bf9\u4e86\uff0c\u5fd8\u4e86\u8bf4flex\u4e86\uff0c\u7b97\u4e86\u8fd8\u662f\u4e0d\u5199\u4e86\uff09<\/li>\n<\/ul><h3 id=\"3-\">3. \u5de6\u8fb9\u56fa\u5b9a\u53f3\u8fb9\u81ea\u9002\u5e94\u7684\u4e24\u5217\u5e03\u5c40<\/h3>\n<p>\u6211\u731c\u5427\uff0c\u5927\u5bb6\u5bf9\u8fd9\u79cd\u5e03\u5c40\u65b9\u5f0f\u6700\u719f\u6089\u4e0d\u8fc7\u4e86\uff0c\u5e73\u65f6\u7528\u7684\u4e5f\u4f1a\u6bd4\u8f83\u591a\uff0c\u6240\u4ee5\u5462\uff0c\u4f60\u4eec\u5199\u7684\u5e94\u8be5\u90fd\u4f1a\u6bd4\u6211\u7684\u597d~<\/p>\n<ul><li>\u65b9\u5f0f\u4e00\uff1afloat+margin\u7684\u65b9\u5f0f\n<p>\u8fd9\u79cd\u65b9\u5f0f\u4e00\u5b9a\u8981\u8bb0\u5f97\u7ed9\u7236\u5143\u7d20\u6e05\u9664\u6d6e\u52a8\u554a\uff0c\u4e0d\u7136\u5c31\u5c34\u5c2c\u4e86\u5462\uff0c\u8fd9\u91cc\u63d2\u64ad\u4e00\u79cd\u5168\u5c40\u6027(\u8fd9\u4e2a\u8bcd\u4f3c\u4e4e\u4e0d\u592a\u5bf9)\u7684\u6e05\u9664\u6d6e\u52a8\u7684\u4f2a\u5143\u7d20\u65b9\u6cd5.<\/p>\n\n<\/li>\n<\/ul><pre><code><span class=\"hljs-selector-class\">.clearfix<\/span>:after {\n    <span class=\"hljs-attribute\">content<\/span>: <span class=\"hljs-string\">'.'<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>: <span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">overflow<\/span>: hidden;\n    <span class=\"hljs-attribute\">clear<\/span>: both;\n    <span class=\"hljs-attribute\">display<\/span>: block;\n    <span class=\"hljs-attribute\">visibility<\/span>: hidden;\n}\n<span class=\"hljs-selector-class\">.clearfix<\/span> {\n    zoom: <span class=\"hljs-number\">1<\/span>;  &lt;!--hack--&gt;\n}\n<\/code><\/pre><p>\u770b\u8d77\u6765\u6709\u70b9\u5c0f\u590d\u6742\u554a\uff0c\u8fd9\u91cc\u4e0d\u5206\u6790\u8fd9\u79cd\u65b9\u6cd5\u7684\u539f\u7406\uff0c\u8bb0\u4f4f\u5c31\u597d\u4e86\u3002\u5f53\u7136\u4f60\u4e5f\u53ef\u4ee5\u76f4\u63a5\u501f\u52a9\u89e6\u53d1BFC\u7684\u65b9\u5f0f\u6765\u89e3\u51b3\uff08\u5077\u5077\u544a\u8bc9\u4f60\uff0c\u5e38\u7528\u7684\u65b9\u5f0f\u5c31\u662f\u7ed9\u4f60\u7684\u7236\u5143\u7d20\u8bbe\u7f6e<code>overflow: hidden;<\/code>\u5566\uff09\u3002<\/p>\n<p>\u54e6+\u8bed\u6c14~\u597d\u50cf\u8dd1\u504f\u4e86\uff0c\u8bf4\u597d\u7684\u5e03\u5c40\u5462\uff0c\u89c1\u4e0b\u8bc9\u4ee3\u7801\uff1a<\/p>\n<pre><code><span class=\"hljs-selector-id\">#left<\/span>{\n    <span class=\"hljs-attribute\">float<\/span>: left;\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">100px<\/span>;\n}\n<span class=\"hljs-selector-id\">#right<\/span>{\n    <span class=\"hljs-attribute\">margin-left<\/span>: <span class=\"hljs-number\">120px<\/span>;\n}\n<\/code><\/pre><ul><li>\u65b9\u5f0f\u4e8c\uff1afloat+overflow\u7684\u65b9\u5f0f<\/li>\n<\/ul><p>\u8fd9\u5c31\u662f\u4f20\u8bf4\u4e2d\u5229\u7528BFC\u7684\u89c4\u5219\u6765\u5b9e\u73b0\u4e24\u5217\u5e03\u5c40\u554a\u554a\u554a\uff01<\/p>\n\n<p>\u6b64\u5904\u505a\u4e2a\u4fee\u6539\uff0c\u539f\u6765\u5199\u7684\u6709\u70b9\u95ee\u9898\uff08\u53d1\u73b0\u8fd9\u79cd\u65b9\u5f0f\u7236\u5143\u7d20\u7684\u9ad8\u5ea6\u662f\u53d6\u51b3\u4e8e\u6700\u5927\u5b50\u5143\u7d20\u7684\u9ad8\u5ea6\uff0c\u5728\u5de6\u8fb9\u680f\u9ad8\u5ea6\u5927\u4e8e\u53f3\u8fb9\u680f\u7684\u60c5\u51b5\u4e0b\u4e0d\u4f1a\u51fa\u73b0\u95ee\u9898\uff0c\u4f46\u662f\u53cd\u8fc7\u6765\u5c31\u584c\u9677\u4e86\uff0c\u6240\u4ee5\u8fd8\u662f\u9700\u8981\u7ed9\u7236\u5143\u7d20\u6e05\u9664\u6d6e\u52a8\uff09<\/p>\n\n<pre><code>#left{\n    float: left;\n    width: 100px;\n    margin-right: 20px; <span class=\"hljs-comment\">&lt;!--\u597d\u6b79\u7559\u4e2a\u7a7a\u554a\u563f\u563f--&gt;<\/span>\n}\n#right{\n    overflow: hidden;\n}\n<\/code><\/pre><ul><li>\u65b9\u5f0f\u4e09\uff1afloat+margin+position\u7684\u65b9\u5f0f<\/li>\n<\/ul><p>\u8fd9\u4e2a\u65b9\u5f0f\u5462\u4e5f\u7528\u5230\u8fc7\uff0c\u4f46\u662f\u8981\u8003\u8651\u7684\u6bd4\u8f83\u591a\u4e00\u70b9\uff0c\u4e0d\u8fc7\u5176\u5b9e\u4e5f\u8fd8\u597d\u3002<br>\u63a5\u4e0b\u6765\u8bf7\u770b\u5b9e\u73b0\u4ee3\u7801\uff1a<\/p>\n<pre><code><span class=\"hljs-selector-id\">#parent<\/span>{\n    <span class=\"hljs-attribute\">position<\/span>: relative;\n}\n<span class=\"hljs-selector-id\">#left<\/span>{\n    <span class=\"hljs-attribute\">float<\/span>: left;\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">100px<\/span>;\n    <span class=\"hljs-attribute\">background-color<\/span>: <span class=\"hljs-number\">#ccc<\/span>;\n}\n<span class=\"hljs-selector-id\">#right<\/span>{\n    <span class=\"hljs-attribute\">position<\/span>: absolute;\n    <span class=\"hljs-attribute\">top<\/span>: <span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">left<\/span>: <span class=\"hljs-number\">120px<\/span>;\n    <span class=\"hljs-attribute\">background-color<\/span>:pink; \n}\n<\/code><\/pre>\n<p>\u8fd9\u79cd\u65b9\u5f0f\u5b9e\u73b0\u8d77\u6765\u5f88\u7b80\u5355\uff0c\u4f46\u662f\u5bf9\u540e\u6587\u662f\u6709\u5f71\u54cd\u7684\uff0c\u9700\u8981\u81ea\u5df1\u89e3\u51b3\u4e00\u4e0b\uff0c\u61d2\u5c0f\u82b1\u5c31\u4e0d\u5199\u5566~<\/p>\n\n<ul><li>\u65b9\u5f0f\u56db\uff1aflex\u65b9\u5f0f\n<p>\u8fd9\u4e2a\u5462\uff0c\u5751\u80af\u5b9a\u662f\u6bd4\u8f83\u591a\u7684\uff0c\u5efa\u8bae\u7528\u5728\u5c0f\u8303\u56f4\u7684\u5e03\u5c40\uff0c\u5f53\u7136\u67d0\u4e9b\u65f6\u5019\u7528\u8d77\u6765\u786e\u5b9e\u6bd4\u8f83\u723d\u6b6a\u6b6a\u5566<\/p>\n\n<\/li>\n<\/ul><pre><code><span class=\"hljs-selector-id\">#parent<\/span>{\n    <span class=\"hljs-attribute\">display<\/span>: flex;\n}\n<span class=\"hljs-selector-id\">#left<\/span>{\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">100px<\/span>;\n    <span class=\"hljs-attribute\">margin-right<\/span>: <span class=\"hljs-number\">20px<\/span>;\n}\n<span class=\"hljs-selector-id\">#right<\/span>{\n    <span class=\"hljs-attribute\">flex<\/span>: <span class=\"hljs-number\">1<\/span>;\n}\n<\/code><\/pre><ul><li>\u5176\u4ed6\u7684\u5427\uff0c\u6211\u6682\u65f6\u8fd8\u6ca1\u7528\u5230\u4e5f\u6ca1\u5199\u5230~\u7f51\u4e0a\u4e00\u641c\u4f1a\u6709\u597d\u591a\u597d\u591a\u7cbe\u8bb2\u7684\u3002<\/li>\n<\/ul><h3 id=\"4-\">4. \u5de6\u8fb9\u81ea\u9002\u5e94\u53f3\u8fb9\u56fa\u5b9a<\/h3>\n<p>\u8bdd\u8bf4\u5176\u5b9e\u6211\u5c31\u53ea\u5199\u4e86\u4e00\u79cd\u65b9\u6cd5\uff0c\u6211\u90fd\u6709\u70b9\u4e0d\u597d\u610f\u601d\u653e\u4e0a\u6765\u4e86\uff0c\u4e0d\u7ba1\u4e86\uff0c\u5c0f\u82b1\u7684\u8138\u76ae\u6bd4\u8f83\u539a\uff0c\u4e0d\u6015\uff01<\/p>\n<ul><li>\u65b9\u5f0f\u4e00\uff1a \u5f53\u7136\u8fd8\u662fposition<br>\u53cd\u6b63\u5f88\u591a\u60c5\u51b5\u90fd\u53ef\u4ee5\u7528position\u6765\u89e3\u51b3\uff0c\u4f46\u662f\uff0c\u540c\u65f6\u4e5f\u4f1a\u6709\u4e00\u4e9b\u5176\u4ed6\u95ee\u9898\u51fa\u73b0\uff0c\u6240\u4ee5\uff0c\u81ea\u884c\u601d\u8003\u7528\u4e0d\u7528~<\/li>\n<\/ul><pre><code><span class=\"hljs-selector-id\">#parent<\/span> {\n    <span class=\"hljs-attribute\">position<\/span>: relative;\n}\n<span class=\"hljs-selector-id\">#left<\/span> {\n    <span class=\"hljs-attribute\">margin-right<\/span>:<span class=\"hljs-number\">220px<\/span>; \n}\n<span class=\"hljs-selector-id\">#right<\/span> {\n    <span class=\"hljs-attribute\">position<\/span>: absolute; \n    <span class=\"hljs-attribute\">right<\/span>:<span class=\"hljs-number\">0<\/span>; \n    <span class=\"hljs-attribute\">top<\/span>:<span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">200px<\/span>;\n}\n<\/code><\/pre><h3 id=\"5-\">5. \u4e24\u8fb9\u56fa\u5b9a\u4e2d\u95f4\u81ea\u9002\u5e94\u7684\u4e09\u5217\u5e03\u5c40<\/h3>\n<p>\u5176\u5b9e\u8fd9\u4e2a\u5e03\u5c40\u7528\u7684\u4e5f\u633a\u591a\u7684\u554a\u54c8\uff0c\u55ef\uff0c\u6628\u5929\u5199\u7684\u4f5c\u4e1a\u5c31\u662f\u8fd9\u4e2a\uff01<\/p>\n<ul><li>\u65b9\u5f0f\u4e00\uff1a\u7eaffloat\u65b9\u5f0f<\/li>\n<\/ul><p>\u6ce8\u610f\uff1a<\/p>\n<ol><li>\u5de6\u4fa7\u5143\u7d20\u4e0e\u53f3\u4fa7\u5143\u7d20\u4f18\u5148\u6e32\u67d3\uff0c\u5206\u522b\u5411\u5de6\u548c\u5411\u53f3\u6d6e\u52a8 <\/li>\n<li>\u4e2d\u95f4\u5143\u7d20\u5728\u6587\u6863\u6d41\u7684\u6700\u540e\u6e32\u67d3\uff0c\u81ea\u52a8\u63d2\u5165\u5230\u5de6\u53f3\u4e24\u5217\u5143\u7d20\u7684\u4e2d\u95f4\uff0c\u968f\u540e\u8bbe\u7f6e margin \u5de6\u53f3\u8fb9\u8ddd\u5206\u522b\u4e3a\u5de6\u53f3\u4e24\u5217\u7684\u5bbd\u5ea6\uff0c\u5c06\u4e2d\u95f4\u5143\u7d20\u8c03\u6574\u5230\u6b63\u786e\u7684\u4f4d\u7f6e\u3002<\/li>\n<\/ol><pre><code><span class=\"hljs-selector-class\">.left<\/span>{\n    <span class=\"hljs-attribute\">float<\/span>: left;\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">200px<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>: <span class=\"hljs-number\">200px<\/span>;\n}\n<span class=\"hljs-selector-class\">.right<\/span>{\n    <span class=\"hljs-attribute\">float<\/span>: right;\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">100px<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>: <span class=\"hljs-number\">100px<\/span>;\n}\n<span class=\"hljs-selector-class\">.middle<\/span>{\n    <span class=\"hljs-attribute\">margin<\/span>:<span class=\"hljs-number\">0<\/span> <span class=\"hljs-number\">120px<\/span> <span class=\"hljs-number\">0<\/span> <span class=\"hljs-number\">220px<\/span>;\n}\n<\/code><\/pre>\n<p>\u4f46\u51e1\u7528float\u7684\u65f6\u5019\u90fd\u8981\u60f3\u4e00\u4e0b\u7236\u5143\u7d20\u4e0a\u6e05\u9664\u6d6e\u52a8\u8fd9\u4e2a\u95ee\u9898\uff01<\/p>\n\n<ul><li>\u65b9\u5f0f\u4e8c\uff1aposition\u7684\u7edd\u5bf9\u5b9a\u4f4d<\/li>\n<\/ul><p>\u5176\u5b9e\u611f\u89c9\u8ddffloat\u7684\u539f\u7406\u5dee\u4e0d\u591a\uff0c\u90fd\u662f\u5c06\u5de6\u53f3\u4e24\u4fa7\u7684\u5757\u5148\u56fa\u5b9a\u597d\uff0c\u518d\u5bf9\u4e2d\u95f4\u90e8\u5206\u8fdb\u884c\u5904\u7406\uff0c\u53ea\u4e0d\u8fc7\u81ea\u5df1\u53ef\u4ee5\u5728\u4e0d\u540c\u60c5\u51b5\u4e0b\u9009\u62e9float\u6216\u8005position\u3002\uff08\u8865\u5145\uff1a\u8fd9\u79cd\u65b9\u5f0f\u7684\u7236\u5143\u7d20\u9ad8\u5ea6\u53d6\u51b3\u4e8e\u4e2d\u95f4\u90e8\u5206\u7684\u9ad8\u5ea6\uff0c\u5f53\u4e24\u4fa7\u9ad8\u5ea6\u5927\u4e8e\u4e2d\u95f4\u9ad8\u5ea6\u65f6\uff0c\u5219\u51fa\u73b0\u9ad8\u5ea6\u584c\u9677\uff0c\u9664\u975e\u6307\u5b9a\u7236\u5143\u7d20\u7684\u9ad8\u5ea6\uff0c\u5f53\u4e24\u4fa7\u9ad8\u5ea6\u5c0f\u4e8e\u4e2d\u95f4\u90e8\u5206\u65f6\uff0c\u53ef\u4ee5\u4f7f\u7528\u3002\u6240\u4ee5\u8981\u8003\u8651\u4f7f\u7528\u573a\u666f\u614e\u91cd\u9009\u62e9\u4e0d\u540c\u7684\u65b9\u5f0f~\uff09<\/p>\n<pre><code><span class=\"hljs-selector-class\">.parent<\/span>{\n    <span class=\"hljs-attribute\">position<\/span>: relative;\n}\n<span class=\"hljs-selector-class\">.left<\/span>{\n    <span class=\"hljs-attribute\">position<\/span>: absolute;\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">200px<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>: <span class=\"hljs-number\">200px<\/span>;\n    <span class=\"hljs-attribute\">top<\/span>: <span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">left<\/span>: <span class=\"hljs-number\">0<\/span>;\n}\n<span class=\"hljs-selector-class\">.right<\/span>{\n    <span class=\"hljs-attribute\">position<\/span>: absolute;\n    <span class=\"hljs-attribute\">top<\/span>: <span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">right<\/span>: <span class=\"hljs-number\">0<\/span>;\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">100px<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>: <span class=\"hljs-number\">100px<\/span>;\n}\n<span class=\"hljs-selector-class\">.middle<\/span>{\n    <span class=\"hljs-attribute\">margin<\/span>:<span class=\"hljs-number\">0<\/span> <span class=\"hljs-number\">120px<\/span> <span class=\"hljs-number\">0<\/span> <span class=\"hljs-number\">220px<\/span>;\n}\n<\/code><\/pre><ul><li>\u65b9\u5f0f\u4e09\uff1aflex\u7684\u5f39\u6027\u5e03\u5c40<\/li>\n<\/ul><p>\u4e0d\u5f97\u4e0d\u8bf4\u7684\u662f\u5176\u5b9e\u5f88\u591a\u5e03\u5c40\u90fd\u53ef\u4ee5\u7528flex\u6765\u5b9e\u73b0(\u7b80\u5355\u7c97\u66b4\u563f\u563f)\uff0c\u4f46\u662fflex\u7684\u517c\u5bb9\u6027\u4e0d\u662f\u5f88\u597d\uff0c\u5e76\u4e14\u8fd8\u6709\u522b\u95ee\u9898\uff0c\u6240\u4ee5\u4fdd\u9669\u8d77\u89c1\u8fd8\u662f\u9009\u62e9\u5e38\u7528\u7684\uff0c\u8fd9\u91cc\u7b80\u5355\u4ecb\u7ecd\u4e0b\u3002<\/p>\n<pre><code><span class=\"hljs-selector-class\">.parent<\/span>{\n    <span class=\"hljs-attribute\">display<\/span>: flex;\n}\n<span class=\"hljs-selector-class\">.left<\/span>{\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">200px<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>: <span class=\"hljs-number\">200px<\/span>;\n}\n<span class=\"hljs-selector-class\">.right<\/span>{\n    <span class=\"hljs-attribute\">width<\/span>: <span class=\"hljs-number\">100px<\/span>;\n    <span class=\"hljs-attribute\">height<\/span>: <span class=\"hljs-number\">100px<\/span>;\n}\n<span class=\"hljs-selector-class\">.middle<\/span>{\n    <span class=\"hljs-attribute\">flex<\/span>: <span class=\"hljs-number\">1<\/span>;\n    <span class=\"hljs-attribute\">margin<\/span>:<span class=\"hljs-number\">0<\/span> <span class=\"hljs-number\">20px<\/span>; \n}\n<\/code><\/pre><ul><li>\u65b9\u5f0f\u56db\uff1a\u6700\u540e\u8be5\u6dd8\u5b9d\u7684<code>\u53cc\u7ffc\u5e03\u5c40<\/code>\u95ea\u4eae\u767b\u573a\u4e86<\/li>\n<\/ul><p>\u8981\u6ce8\u610f\u7684\u662f\u8fd9\u79cd\u5e03\u5c40\u65b9\u5f0f\u9700\u8981\u5c06\u4e3b\u680f\u4f18\u5148\u6e32\u67d3\uff0c\u7136\u540e\u518d\u52a0\u4e0a\u4e24\u8fb9\u7684\u7fc5\u8180\uff0c\u5373\u53cc\u7ffc\uff0c\u4e0d\u8fc7\u8bdd\u53c8\u8bf4\u8bdd\u6765\uff0c\u867d\u7136\u5c0f\u82b1\u662f\u6309\u7167\u8fd9\u4e2a\u5957\u8def\u5199\u7684\uff0c\u4f46\u4e5f\u4e0d\u786e\u5b9a\u81ea\u5df1\u5199\u7684\u5c31\u662f\u53cc\u7ffc\u5e03\u5c40\u3002<br>\u4e3a\u4e86\u4e0d\u8bef\u4eba\u5b50\u5f1f\uff0c\u5728\u8fd9\u5148\u8bf4\u660e\u53ea\u662f\u53c2\u8003\u53c2\u8003\u54df\uff08\u6b22\u8fce\u5927\u4f6c\u7ea0\u6b63\uff09~<\/p>\n\n<ul><li>\u7b2c\u4e00\u6b65\uff0c\u5148\u5c06\u4e3b\u680f\u5de6\u6d6e\u52a8\uff0c\u5e76\u8bbe\u5bbd\u5ea6\u4e3a100%\uff0c\u5373\u94fa\u6ee1\u7236\u5143\u7d20<\/li>\n<li>\u7b2c\u4e8c\u6b65\uff0c\u5c06\u5de6\u680f\u5de6\u6d6e\u52a8\uff0c\u5e76\u8bbe\u5de6\u5916\u8fb9\u8ddd\u4e3a-100%<\/li>\n<li>\u7b2c\u4e09\u6b65\uff0c\u5c06\u53f3\u680f\u5de6\u6d6e\u52a8\uff0c\u5e76\u8bbe\u5de6\u5916\u8fb9\u8ddd\u4e3a\u8d1f\u7684\u81ea\u8eab\u5bbd\u5ea6<\/li>\n<li>\u7b2c\u56db\u6b65\uff0c\u8bbe\u7f6e\u4e3b\u680f\uff0c\u563f\u563f\uff0c\u8fd9\u65f6\u5019\u4e0d\u7ba1\u4f60\u4f7f\u7528\u4ec0\u4e48\u65b9\u6cd5\u90fd\u8fbe\u4e0d\u5230\u6548\u679c\uff0c\u89e3\u51b3\u529e\u6cd5\u5c31\u662f\u7ed9\u4e3b\u680f\u7684\u5185\u5bb9\u52a0\u4e00\u4e2a\u5305\u88f9\u5c42\uff0c\u5e76\u8bbe\u5de6\u53f3\u5916\u8fb9\u8ddd\u4e3a\u5de6\u53f3\u4e24\u4fa7\u7684\u5bbd\u5ea6\u3002<\/li>\n<li>\u7b2c\u4e94\u6b65\uff0c\u597d\u4e86\uff0c\u5b8c\u7f8e\uff01\uff08\u4f46\u662f\u522b\u5fd8\u4e86\uff0c\u8981\u6e05\u9664\u6d6e\u52a8\u54e6~\uff09<\/li>\n<\/ul><h3 id=\"6-\">6. \u662f\u65f6\u5019\u5c0f\u7ed3\u4e00\u6ce2\u4e86<\/h3>\n<ul><li>\u9996\u5148\uff0c\u6bcf\u79cd\u65b9\u5f0f\u90fd\u5c0f\u8bd5\u4e86\u4e00\u4e0b\uff0c\u57fa\u672c\u4e0a\u6548\u679c\u662f\u53ef\u4ee5\u8fbe\u5230\u7684\uff0c\u5f53\u7136\u5b9e\u9645\u60c5\u51b5\u4e2d\u4f1a\u6bd4\u8f83\u590d\u6742\uff0c\u4f60\u4f1a\u9047\u5230\u5404\u79cd\u5404\u6837\u7684\u9ebb\u70e6\uff0c\u795d\u4f60\u597d\u8fd0~<\/li>\n<li>\u6bcf\u79cd\u65b9\u5f0f\u7684\u4f18\u7f3a\u70b9\u5176\u5b9e\u5bf9\u4e8e\u6211\u8fd9\u79cd\u840c\u65b0\u6765\u8bf4\u4e5f\u662f\u6bd4\u8f83\u61f5\uff0c\u53ea\u662f\u8fd9\u51e0\u5929\u5199\u4e86\u51e0\u4e2a\u4f5c\u4e1a\u624d\u60f3\u5230\u8981\u5c0f\u5c0f\u603b\u7ed3\u4e0b\u7684<\/li>\n<li>\u7b2c\u4e00\u6b21\u7528markdown\u5199\u6587\u5b57\u68d2\u68d2\u54d2\uff0c\u4e0d\u8981\u4ecb\u610f\u67d0\u4e9b\u5730\u65b9\u53ef\u80fd\u5199\u9519\u4e86<\/li>\n<\/ul><h3 id=\"-\">\u5927\u53d1\uff01<\/h3>\n","contentMd":"### \u5199\u5728\u524d\u9762\n+ \u7531\u4e8e\u77e5\u8bc6\u6709\u9650\uff0c\u6709\u7684\u5185\u5bb9\u53ef\u80fd\u6709\u70b9\u5c0f\u9519\u8bef\u4ec0\u4e48\u7684\uff0c\u4ec5\u4f9b\u53c2\u8003\u53c2\u8003\uff0c\u6b22\u8fce\u5927\u4f6c\u4eec\u6307\u6b63\uff0c\u5c0f\u82b1\u5728\u8fd9\u91cc\u8c22\u8fc7~\n+ \u5c0f\u8d34\u58eb\uff08to freshman\uff09\uff1a\u7ed9\u6bcf\u4e2a\u5757\u90fd\u52a0\u4e0a\u989c\u8272\uff0c\u66f4\u597d\u8fa8\u8bc6\u3002\n+ \u5173\u4e8e\u4ee3\u7801\uff1a\u8fd9\u91cc\u7ed9\u51fa\u7684\u90fd\u662fcss\u90e8\u5206\uff0chtml\u90e8\u5206\u7528\u6700\u5e38\u89c4\u7684\u7ed3\u6784\u5c31\u597d\u5566\n\n### 1. \u6c34\u5e73\u5c45\u4e2d\n\n+ \u65b9\u6cd5\u4e00\uff1amargin:0 auto; \uff08\u6700\u5e38\u7528\u7684\u5c45\u4e2d\u5e03\u5c40\u65b9\u5f0f\uff09\n+ \u65b9\u6cd5\u4e8c\uff1atext-align\u548cinline-block\u7684\u7ed3\u5408\uff08\u8bbe\u7f6e\u7236\u5143\u7d20\u7684text-align\u4e3acenter\uff09\u3002\n    > \u8fd9\u79cd\u65b9\u5f0f\u6700\u597d\u5e94\u7528\u4e8e\u56fe\u7247\u3001\u6309\u94ae\u3001\u6587\u5b57\u4e4b\u7c7b\u7684\u5c45\u4e2d\u6a21\u5f0f\uff0c\u5426\u5219\u5c31\u9700\u8981\u501f\u52a9inline-block\u6765\u8fdb\u884c\u5c45\u4e2d\u5e03\u5c40\u3002\n+ \u65b9\u6cd5\u4e09\uff1aposition\u7edd\u5bf9\u5b9a\u4f4d\u6765\u5b9e\u73b0\u5c45\u4e2d\u5e03\u5c40\u3002\n    >  \u9002\u7528\u4e8e\u5757\u7ea7\u5143\u7d20\u4e0d\u7ed9\u51fa\u5bbd\u9ad8\u7684\u60c5\u51b5\u4e0b(\u9700\u8981\u501f\u52a9transtrom\u7684tanslateX\u65b9\u6cd5)\u3002\n\n```\n#parent{\n\tposition: relative;\n}\n#child{\n\tposition: absolute;\n\ttop: 0;\n\tleft: 50%;\n\ttransform: translateX(-50%);\n}\n```\n\n+ \u65b9\u6cd5\u56db\uff1a\u5229\u7528flex\u5f39\u6027\u5e03\u5c40\u7684\u4e00\u4e2a\u5c5e\u6027\u3002\n    > \u5b50\u5143\u7d20\u5bbd\u5ea6\u5df2\u77e5\u7684\u60c5\u51b5\u4e0b\n    \n```\n#parent{\n\tdisplay: flex;\n\tjustify-content: center;\n}\n```\n\n+ \u5176\u4ed6\u8fd8\u6709\u5f88\u591a\u65b9\u6cd5\uff0c\u4e00\u822c\u7528\u7684\u4e0d\u592a\u591a\u3002\u5e76\u4e14\u5404\u79cd\u65b9\u6cd5\u4f18\u7f3a\u70b9\u4e0d\u4e00\u6837\uff0c\u53ef\u9009\u62e9\u6027\u4f7f\u7528\u3002\n\n### 2. \u6c34\u5e73\u5c45\u4e2d\u53ca\u5782\u76f4\u5c45\u4e2d\n\n+ \u65b9\u6cd5\u4e00\uff1a\u5148\u8bf4\u4e00\u79cd\u795e\u5947\u7684\u65b9\u5f0f\u5427\uff0c\n> 1. \u5b50\u5143\u7d20 div \u7edd\u5bf9\u5b9a\u4f4d \n> 2. \u7236\u5143\u7d20\u9700\u8981\u88ab\u5b9a\u4f4d \n> 3. \u5b50\u5143\u7d20 top\u3001bottom\u3001left\u3001right \u56db\u4e2a\u4f4d\u7f6e\u503c\u5747\u4e3a 0 \n> 4. \u5b50\u5143\u7d20 margin: auto; \n\n\n\u4e0b\u9762\u4ee3\u7801\u662f\u53ef\u4ee5\u5b9e\u73b0\u7684\uff0c\u4f46\u8fd8\u6709\u70b9\u95ee\u9898\uff0c\u5927\u5bb6\u5e2e\u5c0f\u82b1\u770b\u770b~\n\n```\n#parent{\n\twidth: 100%;\n\theight:100%;\n\tposition: fixed;\n}\n#child{\n\twidth: 400px;\n\theight: 200px;\n\tposition: absolute;\n\ttop: 0;\n\tbottom: 0;\n\tleft: 0;\n\tright: 0;\n\tmargin: auto;\n\tbackground-color: #ccc;\n}\n```\n\n+ \u65b9\u5f0f\u4e8c\uff1a\u5229\u7528position\u7684\u7edd\u5bf9\u5b9a\u4f4d\u53ca\u8d1f\u8fb9\u6846\u6765\u5b9e\u73b0\u3002\n\n```\n #parent{\n\tposition: fixed;\n\twidth: 100%;\n\theight: 100%;\n}\n#child{\n\tposition: absolute;\n    left: 50%;\n    top: 50%;\n    width: 400px;\n    height: 200px;\n    margin-top: -100px;\n    margin-left: -200px;\n    background-color: #ccc;\n}\n```\n\n> \u5bf9\u4e8e\u672a\u7ed9\u51fa\u5bbd\u9ad8\u7684\u5143\u7d20\uff0c\u53c8\u9700\u8981\u8bf7transform\u767b\u573a\u4e86\uff0c\u540c\u65f6\u9700\u8981\u505a\u597d\u5404\u6d4f\u89c8\u5668\u7684\u517c\u5bb9\u3002\u5bf9\u4e8e\u6211\u8fd9\u79cd\u61d2\u764c\u60a3\u8005\uff0c\u5c31\u4e0d\u7ed9\u51fa\u517c\u5bb9\u4ee3\u7801\u561e~\n\n+ \u5176\u4ed6\u5e94\u8be5\u8fd8\u6709\u4e00\u4e9b\u65b9\u6cd5\uff0c\u6682\u65f6\u8fd8\u6ca1\u60f3\u5230\uff0c\u7b49\u5199\u51fa\u6765\u4e86\u518d\u8865\u8865\uff08\u54e6\u5bf9\u4e86\uff0c\u5fd8\u4e86\u8bf4flex\u4e86\uff0c\u7b97\u4e86\u8fd8\u662f\u4e0d\u5199\u4e86\uff09\n\n\n### 3. \u5de6\u8fb9\u56fa\u5b9a\u53f3\u8fb9\u81ea\u9002\u5e94\u7684\u4e24\u5217\u5e03\u5c40\n\u6211\u731c\u5427\uff0c\u5927\u5bb6\u5bf9\u8fd9\u79cd\u5e03\u5c40\u65b9\u5f0f\u6700\u719f\u6089\u4e0d\u8fc7\u4e86\uff0c\u5e73\u65f6\u7528\u7684\u4e5f\u4f1a\u6bd4\u8f83\u591a\uff0c\u6240\u4ee5\u5462\uff0c\u4f60\u4eec\u5199\u7684\u5e94\u8be5\u90fd\u4f1a\u6bd4\u6211\u7684\u597d~\n+ \u65b9\u5f0f\u4e00\uff1afloat+margin\u7684\u65b9\u5f0f\n> \u8fd9\u79cd\u65b9\u5f0f\u4e00\u5b9a\u8981\u8bb0\u5f97\u7ed9\u7236\u5143\u7d20\u6e05\u9664\u6d6e\u52a8\u554a\uff0c\u4e0d\u7136\u5c31\u5c34\u5c2c\u4e86\u5462\uff0c\u8fd9\u91cc\u63d2\u64ad\u4e00\u79cd\u5168\u5c40\u6027(\u8fd9\u4e2a\u8bcd\u4f3c\u4e4e\u4e0d\u592a\u5bf9)\u7684\u6e05\u9664\u6d6e\u52a8\u7684\u4f2a\u5143\u7d20\u65b9\u6cd5.\n\n```\n.clearfix:after {\n    content: '.';\n    height: 0;\n    overflow: hidden;\n    clear: both;\n    display: block;\n    visibility: hidden;\n}\n.clearfix {\n    zoom: 1;  <!--hack-->\n}\n```\n\n\u770b\u8d77\u6765\u6709\u70b9\u5c0f\u590d\u6742\u554a\uff0c\u8fd9\u91cc\u4e0d\u5206\u6790\u8fd9\u79cd\u65b9\u6cd5\u7684\u539f\u7406\uff0c\u8bb0\u4f4f\u5c31\u597d\u4e86\u3002\u5f53\u7136\u4f60\u4e5f\u53ef\u4ee5\u76f4\u63a5\u501f\u52a9\u89e6\u53d1BFC\u7684\u65b9\u5f0f\u6765\u89e3\u51b3\uff08\u5077\u5077\u544a\u8bc9\u4f60\uff0c\u5e38\u7528\u7684\u65b9\u5f0f\u5c31\u662f\u7ed9\u4f60\u7684\u7236\u5143\u7d20\u8bbe\u7f6e`overflow: hidden;`\u5566\uff09\u3002\n\n\u54e6+\u8bed\u6c14~\u597d\u50cf\u8dd1\u504f\u4e86\uff0c\u8bf4\u597d\u7684\u5e03\u5c40\u5462\uff0c\u89c1\u4e0b\u8bc9\u4ee3\u7801\uff1a\n\n```\n#left{\n\tfloat: left;\n\twidth: 100px;\n}\n#right{\n\tmargin-left: 120px;\n}\n```\n\n+ \u65b9\u5f0f\u4e8c\uff1afloat+overflow\u7684\u65b9\u5f0f\n\n\u8fd9\u5c31\u662f\u4f20\u8bf4\u4e2d\u5229\u7528BFC\u7684\u89c4\u5219\u6765\u5b9e\u73b0\u4e24\u5217\u5e03\u5c40\u554a\u554a\u554a\uff01\n> \u6b64\u5904\u505a\u4e2a\u4fee\u6539\uff0c\u539f\u6765\u5199\u7684\u6709\u70b9\u95ee\u9898\uff08\u53d1\u73b0\u8fd9\u79cd\u65b9\u5f0f\u7236\u5143\u7d20\u7684\u9ad8\u5ea6\u662f\u53d6\u51b3\u4e8e\u6700\u5927\u5b50\u5143\u7d20\u7684\u9ad8\u5ea6\uff0c\u5728\u5de6\u8fb9\u680f\u9ad8\u5ea6\u5927\u4e8e\u53f3\u8fb9\u680f\u7684\u60c5\u51b5\u4e0b\u4e0d\u4f1a\u51fa\u73b0\u95ee\u9898\uff0c\u4f46\u662f\u53cd\u8fc7\u6765\u5c31\u584c\u9677\u4e86\uff0c\u6240\u4ee5\u8fd8\u662f\u9700\u8981\u7ed9\u7236\u5143\u7d20\u6e05\u9664\u6d6e\u52a8\uff09\n\n```\n#left{\n\tfloat: left;\n\twidth: 100px;\n\tmargin-right: 20px; <!--\u597d\u6b79\u7559\u4e2a\u7a7a\u554a\u563f\u563f-->\n}\n#right{\n\toverflow: hidden;\n}\n```\n\n+ \u65b9\u5f0f\u4e09\uff1afloat+margin+position\u7684\u65b9\u5f0f\n \n\u8fd9\u4e2a\u65b9\u5f0f\u5462\u4e5f\u7528\u5230\u8fc7\uff0c\u4f46\u662f\u8981\u8003\u8651\u7684\u6bd4\u8f83\u591a\u4e00\u70b9\uff0c\u4e0d\u8fc7\u5176\u5b9e\u4e5f\u8fd8\u597d\u3002\n\u63a5\u4e0b\u6765\u8bf7\u770b\u5b9e\u73b0\u4ee3\u7801\uff1a\n\n```\n#parent{\n\tposition: relative;\n}\n#left{\n\tfloat: left;\n\twidth: 100px;\n\tbackground-color: #ccc;\n}\n#right{\n\tposition: absolute;\n\ttop: 0;\n\tleft: 120px;\n\tbackground-color:pink; \n}\n```\n\n> \u8fd9\u79cd\u65b9\u5f0f\u5b9e\u73b0\u8d77\u6765\u5f88\u7b80\u5355\uff0c\u4f46\u662f\u5bf9\u540e\u6587\u662f\u6709\u5f71\u54cd\u7684\uff0c\u9700\u8981\u81ea\u5df1\u89e3\u51b3\u4e00\u4e0b\uff0c\u61d2\u5c0f\u82b1\u5c31\u4e0d\u5199\u5566~\n\n+ \u65b9\u5f0f\u56db\uff1aflex\u65b9\u5f0f\n> \u8fd9\u4e2a\u5462\uff0c\u5751\u80af\u5b9a\u662f\u6bd4\u8f83\u591a\u7684\uff0c\u5efa\u8bae\u7528\u5728\u5c0f\u8303\u56f4\u7684\u5e03\u5c40\uff0c\u5f53\u7136\u67d0\u4e9b\u65f6\u5019\u7528\u8d77\u6765\u786e\u5b9e\u6bd4\u8f83\u723d\u6b6a\u6b6a\u5566\n\n```\n#parent{\n\tdisplay: flex;\n}\n#left{\n\twidth: 100px;\n\tmargin-right: 20px;\n}\n#right{\n\tflex: 1;\n}\n```\n\n+ \u5176\u4ed6\u7684\u5427\uff0c\u6211\u6682\u65f6\u8fd8\u6ca1\u7528\u5230\u4e5f\u6ca1\u5199\u5230~\u7f51\u4e0a\u4e00\u641c\u4f1a\u6709\u597d\u591a\u597d\u591a\u7cbe\u8bb2\u7684\u3002\n\n### 4. \u5de6\u8fb9\u81ea\u9002\u5e94\u53f3\u8fb9\u56fa\u5b9a\n\u8bdd\u8bf4\u5176\u5b9e\u6211\u5c31\u53ea\u5199\u4e86\u4e00\u79cd\u65b9\u6cd5\uff0c\u6211\u90fd\u6709\u70b9\u4e0d\u597d\u610f\u601d\u653e\u4e0a\u6765\u4e86\uff0c\u4e0d\u7ba1\u4e86\uff0c\u5c0f\u82b1\u7684\u8138\u76ae\u6bd4\u8f83\u539a\uff0c\u4e0d\u6015\uff01\n\n+ \u65b9\u5f0f\u4e00\uff1a \u5f53\u7136\u8fd8\u662fposition\n\u53cd\u6b63\u5f88\u591a\u60c5\u51b5\u90fd\u53ef\u4ee5\u7528position\u6765\u89e3\u51b3\uff0c\u4f46\u662f\uff0c\u540c\u65f6\u4e5f\u4f1a\u6709\u4e00\u4e9b\u5176\u4ed6\u95ee\u9898\u51fa\u73b0\uff0c\u6240\u4ee5\uff0c\u81ea\u884c\u601d\u8003\u7528\u4e0d\u7528~\n\n```\n#parent {\n\tposition: relative;\n}\n#left {\n\tmargin-right:220px; \n}\n#right {\n    position: absolute; \n    right:0; \n    top:0;\n    width: 200px;\n}\n```\n\n### 5. \u4e24\u8fb9\u56fa\u5b9a\u4e2d\u95f4\u81ea\u9002\u5e94\u7684\u4e09\u5217\u5e03\u5c40\n\u5176\u5b9e\u8fd9\u4e2a\u5e03\u5c40\u7528\u7684\u4e5f\u633a\u591a\u7684\u554a\u54c8\uff0c\u55ef\uff0c\u6628\u5929\u5199\u7684\u4f5c\u4e1a\u5c31\u662f\u8fd9\u4e2a\uff01\n+ \u65b9\u5f0f\u4e00\uff1a\u7eaffloat\u65b9\u5f0f\n\n> \u6ce8\u610f\uff1a\n> 1. \u5de6\u4fa7\u5143\u7d20\u4e0e\u53f3\u4fa7\u5143\u7d20\u4f18\u5148\u6e32\u67d3\uff0c\u5206\u522b\u5411\u5de6\u548c\u5411\u53f3\u6d6e\u52a8 \n> 2. \u4e2d\u95f4\u5143\u7d20\u5728\u6587\u6863\u6d41\u7684\u6700\u540e\u6e32\u67d3\uff0c\u81ea\u52a8\u63d2\u5165\u5230\u5de6\u53f3\u4e24\u5217\u5143\u7d20\u7684\u4e2d\u95f4\uff0c\u968f\u540e\u8bbe\u7f6e margin \u5de6\u53f3\u8fb9\u8ddd\u5206\u522b\u4e3a\u5de6\u53f3\u4e24\u5217\u7684\u5bbd\u5ea6\uff0c\u5c06\u4e2d\u95f4\u5143\u7d20\u8c03\u6574\u5230\u6b63\u786e\u7684\u4f4d\u7f6e\u3002\n\n```\n.left{\n\tfloat: left;\n\twidth: 200px;\n\theight: 200px;\n}\n.right{\n\tfloat: right;\n\twidth: 100px;\n\theight: 100px;\n}\n.middle{\n\tmargin:0 120px 0 220px;\n}\n```\n\n> \u4f46\u51e1\u7528float\u7684\u65f6\u5019\u90fd\u8981\u60f3\u4e00\u4e0b\u7236\u5143\u7d20\u4e0a\u6e05\u9664\u6d6e\u52a8\u8fd9\u4e2a\u95ee\u9898\uff01\n\n+ \u65b9\u5f0f\u4e8c\uff1aposition\u7684\u7edd\u5bf9\u5b9a\u4f4d\n\n\u5176\u5b9e\u611f\u89c9\u8ddffloat\u7684\u539f\u7406\u5dee\u4e0d\u591a\uff0c\u90fd\u662f\u5c06\u5de6\u53f3\u4e24\u4fa7\u7684\u5757\u5148\u56fa\u5b9a\u597d\uff0c\u518d\u5bf9\u4e2d\u95f4\u90e8\u5206\u8fdb\u884c\u5904\u7406\uff0c\u53ea\u4e0d\u8fc7\u81ea\u5df1\u53ef\u4ee5\u5728\u4e0d\u540c\u60c5\u51b5\u4e0b\u9009\u62e9float\u6216\u8005position\u3002\uff08\u8865\u5145\uff1a\u8fd9\u79cd\u65b9\u5f0f\u7684\u7236\u5143\u7d20\u9ad8\u5ea6\u53d6\u51b3\u4e8e\u4e2d\u95f4\u90e8\u5206\u7684\u9ad8\u5ea6\uff0c\u5f53\u4e24\u4fa7\u9ad8\u5ea6\u5927\u4e8e\u4e2d\u95f4\u9ad8\u5ea6\u65f6\uff0c\u5219\u51fa\u73b0\u9ad8\u5ea6\u584c\u9677\uff0c\u9664\u975e\u6307\u5b9a\u7236\u5143\u7d20\u7684\u9ad8\u5ea6\uff0c\u5f53\u4e24\u4fa7\u9ad8\u5ea6\u5c0f\u4e8e\u4e2d\u95f4\u90e8\u5206\u65f6\uff0c\u53ef\u4ee5\u4f7f\u7528\u3002\u6240\u4ee5\u8981\u8003\u8651\u4f7f\u7528\u573a\u666f\u614e\u91cd\u9009\u62e9\u4e0d\u540c\u7684\u65b9\u5f0f~\uff09\n    \n```\n.parent{\n\tposition: relative;\n}\n.left{\n\tposition: absolute;\n\twidth: 200px;\n\theight: 200px;\n\ttop: 0;\n\tleft: 0;\n}\n.right{\n\tposition: absolute;\n\ttop: 0;\n\tright: 0;\n\twidth: 100px;\n\theight: 100px;\n}\n.middle{\n\tmargin:0 120px 0 220px;\n}\n```\n\n+ \u65b9\u5f0f\u4e09\uff1aflex\u7684\u5f39\u6027\u5e03\u5c40\n\n\u4e0d\u5f97\u4e0d\u8bf4\u7684\u662f\u5176\u5b9e\u5f88\u591a\u5e03\u5c40\u90fd\u53ef\u4ee5\u7528flex\u6765\u5b9e\u73b0(\u7b80\u5355\u7c97\u66b4\u563f\u563f)\uff0c\u4f46\u662fflex\u7684\u517c\u5bb9\u6027\u4e0d\u662f\u5f88\u597d\uff0c\u5e76\u4e14\u8fd8\u6709\u522b\u95ee\u9898\uff0c\u6240\u4ee5\u4fdd\u9669\u8d77\u89c1\u8fd8\u662f\u9009\u62e9\u5e38\u7528\u7684\uff0c\u8fd9\u91cc\u7b80\u5355\u4ecb\u7ecd\u4e0b\u3002\n\n```\n.parent{\n\tdisplay: flex;\n}\n.left{\n\twidth: 200px;\n\theight: 200px;\n}\n.right{\n\twidth: 100px;\n\theight: 100px;\n}\n.middle{\n\tflex: 1;\n\tmargin:0 20px; \n}\n```\n\n+ \u65b9\u5f0f\u56db\uff1a\u6700\u540e\u8be5\u6dd8\u5b9d\u7684`\u53cc\u7ffc\u5e03\u5c40`\u95ea\u4eae\u767b\u573a\u4e86\n\n\u8981\u6ce8\u610f\u7684\u662f\u8fd9\u79cd\u5e03\u5c40\u65b9\u5f0f\u9700\u8981\u5c06\u4e3b\u680f\u4f18\u5148\u6e32\u67d3\uff0c\u7136\u540e\u518d\u52a0\u4e0a\u4e24\u8fb9\u7684\u7fc5\u8180\uff0c\u5373\u53cc\u7ffc\uff0c\u4e0d\u8fc7\u8bdd\u53c8\u8bf4\u8bdd\u6765\uff0c\u867d\u7136\u5c0f\u82b1\u662f\u6309\u7167\u8fd9\u4e2a\u5957\u8def\u5199\u7684\uff0c\u4f46\u4e5f\u4e0d\u786e\u5b9a\u81ea\u5df1\u5199\u7684\u5c31\u662f\u53cc\u7ffc\u5e03\u5c40\u3002\n\u4e3a\u4e86\u4e0d\u8bef\u4eba\u5b50\u5f1f\uff0c\u5728\u8fd9\u5148\u8bf4\u660e\u53ea\u662f\u53c2\u8003\u53c2\u8003\u54df\uff08\u6b22\u8fce\u5927\u4f6c\u7ea0\u6b63\uff09~\n\n> + \u7b2c\u4e00\u6b65\uff0c\u5148\u5c06\u4e3b\u680f\u5de6\u6d6e\u52a8\uff0c\u5e76\u8bbe\u5bbd\u5ea6\u4e3a100%\uff0c\u5373\u94fa\u6ee1\u7236\u5143\u7d20\n> + \u7b2c\u4e8c\u6b65\uff0c\u5c06\u5de6\u680f\u5de6\u6d6e\u52a8\uff0c\u5e76\u8bbe\u5de6\u5916\u8fb9\u8ddd\u4e3a-100%\n> + \u7b2c\u4e09\u6b65\uff0c\u5c06\u53f3\u680f\u5de6\u6d6e\u52a8\uff0c\u5e76\u8bbe\u5de6\u5916\u8fb9\u8ddd\u4e3a\u8d1f\u7684\u81ea\u8eab\u5bbd\u5ea6\n> + \u7b2c\u56db\u6b65\uff0c\u8bbe\u7f6e\u4e3b\u680f\uff0c\u563f\u563f\uff0c\u8fd9\u65f6\u5019\u4e0d\u7ba1\u4f60\u4f7f\u7528\u4ec0\u4e48\u65b9\u6cd5\u90fd\u8fbe\u4e0d\u5230\u6548\u679c\uff0c\u89e3\u51b3\u529e\u6cd5\u5c31\u662f\u7ed9\u4e3b\u680f\u7684\u5185\u5bb9\u52a0\u4e00\u4e2a\u5305\u88f9\u5c42\uff0c\u5e76\u8bbe\u5de6\u53f3\u5916\u8fb9\u8ddd\u4e3a\u5de6\u53f3\u4e24\u4fa7\u7684\u5bbd\u5ea6\u3002\n> + \u7b2c\u4e94\u6b65\uff0c\u597d\u4e86\uff0c\u5b8c\u7f8e\uff01\uff08\u4f46\u662f\u522b\u5fd8\u4e86\uff0c\u8981\u6e05\u9664\u6d6e\u52a8\u54e6~\uff09\n\n### 6. \u662f\u65f6\u5019\u5c0f\u7ed3\u4e00\u6ce2\u4e86\n\n+ \u9996\u5148\uff0c\u6bcf\u79cd\u65b9\u5f0f\u90fd\u5c0f\u8bd5\u4e86\u4e00\u4e0b\uff0c\u57fa\u672c\u4e0a\u6548\u679c\u662f\u53ef\u4ee5\u8fbe\u5230\u7684\uff0c\u5f53\u7136\u5b9e\u9645\u60c5\u51b5\u4e2d\u4f1a\u6bd4\u8f83\u590d\u6742\uff0c\u4f60\u4f1a\u9047\u5230\u5404\u79cd\u5404\u6837\u7684\u9ebb\u70e6\uff0c\u795d\u4f60\u597d\u8fd0~\n+ \u6bcf\u79cd\u65b9\u5f0f\u7684\u4f18\u7f3a\u70b9\u5176\u5b9e\u5bf9\u4e8e\u6211\u8fd9\u79cd\u840c\u65b0\u6765\u8bf4\u4e5f\u662f\u6bd4\u8f83\u61f5\uff0c\u53ea\u662f\u8fd9\u51e0\u5929\u5199\u4e86\u51e0\u4e2a\u4f5c\u4e1a\u624d\u60f3\u5230\u8981\u5c0f\u5c0f\u603b\u7ed3\u4e0b\u7684\n+ \u7b2c\u4e00\u6b21\u7528markdown\u5199\u6587\u5b57\u68d2\u68d2\u54d2\uff0c\u4e0d\u8981\u4ecb\u610f\u67d0\u4e9b\u5730\u65b9\u53ef\u80fd\u5199\u9519\u4e86\n\n### \u5927\u53d1\uff01\n\n","auditStatus":"0","courseDeptId":"9","authorName":"\u8bb8\u5c0f\u5170","authorUrl":"\/user\/profile\/id\/1404","courseTitle":"\u4efb\u52a1\u4e94\uff1a\u96f6\u57fa\u7840HTML\u53caCSS\u7f16\u7801\uff08\u4e8c\uff09","courseUrl":"\/course\/detail\/id\/96","courseId":"96","commentCount":"18","abstract":"\u5199\u5728\u524d\u9762 \u7531\u4e8e\u77e5\u8bc6\u6709\u9650\uff0c\u6709\u7684\u5185\u5bb9\u53ef\u80fd\u6709\u70b9\u5c0f\u9519\u8bef\u4ec0\u4e48\u7684\uff0c\u4ec5\u4f9b\u53c2\u8003\u53c2\u8003\uff0c\u6b22\u8fce\u5927\u4f6c\u4eec\u6307\u6b63\uff0c\u5c0f\u82b1\u5728\u8fd9\u91cc\u8c22\u8fc7~ \u5c0f\u8d34\u58eb\uff08to freshman\uff09\uff1a\u7ed9\u6bcf\u4e2a\u5757\u90fd\u52a0\u4e0a\u989c\u8272\uff0c\u66f4\u597d\u8fa8\u8bc6\u3002 \u5173\u4e8e\u4ee3\u7801\uff1a\u8fd9\u91cc\u7ed9\u51fa\u7684\u90fd\u662fcss\u90e8\u5206\uff0chtml\u90e8\u5206\u7528\u6700\u5e38\u89c4\u7684\u7ed3\u6784\u5c31\u597d\u5566 1. \u6c34\u5e73\u5c45\u4e2d \u65b9\u6cd5\u4e00\uff1amargin:0 auto; \uff08\u6700\u5e38\u7528\u7684\u5c45\u4e2d\u5e03\u5c40\u65b9\u5f0f\uff09 \u65b9\u6cd5\u4e8c\uff1atext-align\u548cinline-block\u7684\u7ed3\u5408\uff08\u8bbe\u7f6e\u7236\u5143\u7d20\u7684text-align\u4e3acenter\uff09\u3002 \u8fd9\u79cd\u65b9\u5f0f\u6700\u597d\u5e94\u7528\u4e8e\u56fe\u7247\u3001\u6309\u94ae\u3001\u6587\u5b57\u4e4b\u7c7b\u7684\u5c45\u4e2d\u6a21\u5f0f\uff0c\u5426\u5219\u5c31\u9700\u8981\u501f\u52a9inline-block\u6765\u8fdb\u884c\u5c45\u4e2d\u5e03\u5c40\u3002   \u65b9\u6cd5\u4e09\uff1aposition\u7edd\u5bf9\u5b9a\u4f4d\u6765\u5b9e\u73b0\u5c45\u4e2d\u5e03\u5c40\u3002  \u9002\u7528\u4e8e\u2026","isElite":"1","id":"666","title":"\u83dc\u9e1f\u5f20\u5c0f\u82b1\u4e4b\u5404\u79cd\u5e03\u5c40\u65b9\u5f0f\u5b9e\u73b0","publishDate":"2017-03-02 19:33","viewCount":"1810","detailUrl":"\/note\/detail\/id\/666","approveCount":"57"});
+    });
+</script>
+
+
+</body></html>
