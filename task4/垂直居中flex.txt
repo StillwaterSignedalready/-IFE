@@ -1,0 +1,9 @@
+水平居中，如果是文本(内联元素)text-align:center,div(块级元素)margin:0 auto;,，所以我就不写水平居中了，别嫌我懒哦
+会使用到属性display:flex和align-items
+我大概说一下，display:flex,将对象作为弹性伸缩盒显示
+align-items:定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式。
+.main{/*给父容器设置*/
+display:flex;
+align-items:center;/*所有子元素都垂直居中了*/
+}
+
