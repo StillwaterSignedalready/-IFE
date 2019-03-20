@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 	<style type="text/css">
-		.wraper{
+		/* .wraper{
 			display: flex;
 			flex-flow: wrap;
 			justify-content: space-around;
@@ -21,28 +21,45 @@
 		}
 		.wraper .tu{
 			/*height: 500px;*/
-			width: 200px;
+			/* width: 200px;
 			order: 1;
 			flex-basis: 100px;
-			align-self: end;
+			align-self: end; */
 			/*flex-shrink: 2;*/
+		/* } r */
+		.wraper {
+			display: flex;
+			background-color: aqua;
+			height: 300px;
+			/* width: '100%'; */
+			border: 2px solid black;
+
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: flex-end;
+		}
+		.wraper div {
+			width: 200px;
+			background-color: brown;
+			border: 1px solid white;
+			height: 50px;
+			flex-grow: 2;
 		}
 	</style>
 </head>
 <body>
 	<div class="wraper">
 		<div>1</div>
-		<div class="tu">2</div>
+		<!-- <div class="tu">2</div> -->
 		<div>3</div>
-		<div class="tu">4</div>
+		<!-- <div class="tu">4</div> -->
 		<div>5</div>
-		<div class="tu">6</div>
-		<div>1</div>
-		<div class="tu">2</div>
-		<div>3</div>
-		<div class="tu">4</div>
-		<div>5</div>
-		<div class="tu">6</div>
+		<!-- <div class="tu">6</div> -->
+		<div>7</div>
+		<!-- <div class="tu">2</div> -->
+		<div>9</div>
+		<!-- <div class="tu">4</div> -->
 	</div>
 </body>
 </html>
